@@ -204,15 +204,15 @@ function checksettings() {
     });
   } else {
     menuBtns.forEach(el => {
-      el.onmouseover = () => el.style.backgroundColor = '#FFB84D';
+      el.onmouseover = () => el.style.backgroundColor = '#4ccc6c';
       el.onmouseout = () => el.style.backgroundColor = '';
     });
 
     psBtns.forEach(el => {
       el.onmouseover = () => {
-        el.style.boxShadow = '0 0px 48px #FFB84D, 0 0px 10px #000c';
+        el.style.boxShadow = '0 0px 48px #4ccc6c, 0 0px 10px #000c';
         const svg = el.querySelector('svg');
-        if (svg) svg.style.fill = '#FFB84D';
+        if (svg) svg.style.fill = '#4ccc6c';
       };
       el.onmouseout = () => {
         el.style.boxShadow = '';
@@ -222,9 +222,9 @@ function checksettings() {
     });
 
     plsbtn.forEach(btn => {
-      btn.style.borderColor = '#FFB84D';
+      btn.style.borderColor = '#4ccc6c';
       btn.addEventListener('mouseenter', () => {
-        btn.style.backgroundColor = '#FFB84D';
+        btn.style.backgroundColor = '#4ccc6c';
       });
 
       btn.addEventListener('mouseleave', () => {
@@ -232,14 +232,14 @@ function checksettings() {
       });
     });
 
-    document.getElementById('console').style.borderColor = '#FFB84D';
-    document.getElementById('header-title').style.borderColor = '#FFB84D';
-    document.getElementById('header-title').style.textShadow = '0px 0px 15px #FFB84D';
-    document.getElementById('button-container').style.borderColor = '#FFB84D';
+    document.getElementById('console').style.borderColor = '#4ccc6c';
+    document.getElementById('header-title').style.borderColor = '#4ccc6c';
+    document.getElementById('header-title').style.textShadow = '0px 0px 15px #4ccc6c';
+    document.getElementById('button-container').style.borderColor = '#4ccc6c';
 
     const containers = document.querySelectorAll('.button-container');
     containers.forEach(container => {
-      container.style.borderColor = '#FFB84D';
+      container.style.borderColor = '#4ccc6c';
     });
   }
 }

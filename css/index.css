@@ -29,12 +29,12 @@ body {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 2px;
-    text-shadow: 0px 0px 15px #FFB84D;
+    text-shadow: 0px 0px 15px #4ccc6c;
     background: #6f707433;
     border-radius: 18px;
     padding: 10px 48px;
     pointer-events: auto;
-    border: 3px solid #FFB84D; 
+    border: 3px solid #4ccc6c; 
 
 }
 
@@ -68,7 +68,7 @@ body {
 }
 
 .ps-btn:hover {
-    box-shadow: 0 0px 48px #FFB84D,0 0px 10px #000c;
+    box-shadow: 0 0px 48px #4ccc6c,0 0px 10px #000c;
     transform: scale(1.07);
     transition: 0.5s;
     background: rgb(64, 64, 64);
@@ -77,7 +77,7 @@ body {
 .ps-btn svg:hover {
     transform: scale(1.07);
     transition: 0.5s;
-    fill: #FFB84D;
+    fill: #4ccc6c;
 }
 
 .ps-btn svg {
@@ -95,7 +95,7 @@ body {
     width: 90%;
     height: 18%;
     margin: 0 auto; 
-    border: 1px solid #FFB84D;
+    border: 1px solid #4ccc6c;
     padding: 10px; 
     display: flex;
     align-items: center;
@@ -130,7 +130,7 @@ body {
 }
 
 .menu-btn:hover {
-    background-color: #FFB84Dc4;
+    background-color: #4ccc6cc4;
     color: #222222;
 }
 
@@ -234,7 +234,7 @@ body {
     width: 80%;
     height: 20%;
     margin: 0 auto;
-    border: 1px solid #FFB84D; 
+    border: 1px solid #4ccc6c; 
     padding: 10px; 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -249,7 +249,7 @@ body {
 #button-container button {
     padding: 10px 0;
     font-size: 15px;
-    border: 2px solid #FFB84D;
+    border: 2px solid #4ccc6c;
     border-radius: 10px;
     background-color: #6f707433;
     color: white;
@@ -262,7 +262,7 @@ body {
 }
 
 #button-container button:hover {
-    background-color: #FFB84D;
+    background-color: #4ccc6c;
     color: #222222;
 }
 
@@ -442,9 +442,9 @@ body {
 }
 
 #install-psfrl:hover {
-    border: 2px solid #FFB84D;
+    border: 2px solid #4ccc6c;
     border-radius: 15px;
-    color: #FFB84D;
+    color: #4ccc6c;
     background-color: #333;
 }
 
