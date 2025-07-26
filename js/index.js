@@ -6,6 +6,8 @@ const savedc = localStorage.getItem('dbugc');
 const menuBtns = document.querySelectorAll('.menu-btn');
 const psBtns = document.querySelectorAll('.ps-btn');
 const plsbtn = document.querySelectorAll('.button-container button');
+const consoleDev = document.getElementById("console");
+
 
 var ps4fw
 
@@ -118,6 +120,7 @@ function CheckFW() {
       document.getElementById('PS4FW').textContent = `PS4 FW: ${fwVersion} | Compatible`;
       document.getElementById('PS4FW').style.color = 'green';
       ps4fw = fwVersion.replace('.', '');
+      document.getElementById('install-psfrf').style.display = 'flex';
       if (ps4fw === '903' || ps4fw === '960') {
         document.getElementById('gameb').style.display = 'none';
       }
@@ -204,15 +207,15 @@ function checksettings() {
     });
   } else {
     menuBtns.forEach(el => {
-      el.onmouseover = () => el.style.backgroundColor = '#4ccc6c';
+      el.onmouseover = () => el.style.backgroundColor = '#FFB84D';
       el.onmouseout = () => el.style.backgroundColor = '';
     });
 
     psBtns.forEach(el => {
       el.onmouseover = () => {
-        el.style.boxShadow = '0 0px 48px #4ccc6c, 0 0px 10px #000c';
+        el.style.boxShadow = '0 0px 48px #FFB84D, 0 0px 10px #000c';
         const svg = el.querySelector('svg');
-        if (svg) svg.style.fill = '#4ccc6c';
+        if (svg) svg.style.fill = '#FFB84D';
       };
       el.onmouseout = () => {
         el.style.boxShadow = '';
@@ -222,9 +225,9 @@ function checksettings() {
     });
 
     plsbtn.forEach(btn => {
-      btn.style.borderColor = '#4ccc6c';
+      btn.style.borderColor = '#FFB84D';
       btn.addEventListener('mouseenter', () => {
-        btn.style.backgroundColor = '#4ccc6c';
+        btn.style.backgroundColor = '#FFB84D';
       });
 
       btn.addEventListener('mouseleave', () => {
@@ -232,14 +235,14 @@ function checksettings() {
       });
     });
 
-    document.getElementById('console').style.borderColor = '#4ccc6c';
-    document.getElementById('header-title').style.borderColor = '#4ccc6c';
-    document.getElementById('header-title').style.textShadow = '0px 0px 15px #4ccc6c';
-    document.getElementById('button-container').style.borderColor = '#4ccc6c';
+    document.getElementById('console').style.borderColor = '#FFB84D';
+    document.getElementById('header-title').style.borderColor = '#FFB84D';
+    document.getElementById('header-title').style.textShadow = '0px 0px 15px #FFB84D';
+    document.getElementById('button-container').style.borderColor = '#FFB84D';
 
     const containers = document.querySelectorAll('.button-container');
     containers.forEach(container => {
-      container.style.borderColor = '#4ccc6c';
+      container.style.borderColor = '#FFB84D';
     });
   }
 }
@@ -322,15 +325,13 @@ function loadajbsettings(){
   }
 
   if (ckbaj.checked) {
-    const console = document.getElementById("console");
     if (sessionStorage.getItem('jbsuccess')) {
-      console.append(`Aleardy jailbroken !\n`);
-      console.scrollTop = console.scrollHeight;
+      consoleDev.append(`Already jailbroken !\n`);
+      consoleDev.scrollTop = consoleDev.scrollHeight;
     } else {
       document.getElementById('jailbreak').style.display = 'none';
-      document.getElementById('loader').style.display = 'flex';
-      console.append(`Auto jailbreaking... Please wait for a few seconds.\n`);
-      console.scrollTop = console.scrollHeight;
+      consoleDev.append(`Auto jailbreaking... Please wait for a few seconds.\n`);
+      consoleDev.scrollTop = consoleDev.scrollHeight;
       setTimeout(() => {
         jailbreak();
       }, 3000);
@@ -366,32 +367,36 @@ function loadajbsettings(){
 
 async function jailbreak() {
   try {
-    document.getElementById('jailbreak').style.display = 'none';
-    document.getElementById('loader').style.display = 'flex';
-    const modules = await loadMultipleModules([
-      '../payloads/Jailbreak.js',
-      '../psfree/alert.mjs'
-    ]);
-    console.log("All modules are loaded!");
-    const JailbreakModule = modules[0];
-
-    if (localStorage.getItem('HEN')) {
-      if (JailbreakModule && typeof JailbreakModule.HEN === 'function') {
-          JailbreakModule.HEN();
-      } else {
-          console.error("HEN function not found in Jailbreak.js module");
-      }
-    } else if (localStorage.getItem('GoldHEN')) {
-      if (JailbreakModule && typeof JailbreakModule.GoldHEN === 'function') {
-          JailbreakModule.GoldHEN();
-      } else {
-          console.error("GoldHEN function not found in Jailbreak.js module");
-      }
+    if (sessionStorage.getItem('jbsuccess')) {
+      consoleDev.append(`Aleardy jailbroken !\n`);
+      consoleDev.scrollTop = consoleDev.scrollHeight;
     } else {
-      if (JailbreakModule && typeof JailbreakModule.GoldHEN === 'function') {
-          JailbreakModule.GoldHEN();
+      document.getElementById('jailbreak').style.display = 'none';
+      const modules = await loadMultipleModules([
+        '../payloads/Jailbreak.js',
+        '../psfree/alert.mjs'
+      ]);
+      console.log("All modules are loaded!");
+      const JailbreakModule = modules[0];
+
+      if (localStorage.getItem('HEN')) {
+        if (JailbreakModule && typeof JailbreakModule.HEN === 'function') {
+            JailbreakModule.HEN();
+        } else {
+            console.error("HEN function not found in Jailbreak.js module");
+        }
+      } else if (localStorage.getItem('GoldHEN')) {
+        if (JailbreakModule && typeof JailbreakModule.GoldHEN === 'function') {
+            JailbreakModule.GoldHEN();
+        } else {
+            console.error("GoldHEN function not found in Jailbreak.js module");
+        }
       } else {
-          console.error("GoldHEN function not found in Jailbreak.js module");
+        if (JailbreakModule && typeof JailbreakModule.GoldHEN === 'function') {
+            JailbreakModule.GoldHEN();
+        } else {
+            console.error("GoldHEN function not found in Jailbreak.js module");
+        }
       }
     }
   } catch (e) {

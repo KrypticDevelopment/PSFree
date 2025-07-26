@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # v1
-# Generated on 2025-07-21 18:07:15.545492
+# Generated on 2025-07-23 22:25:10.383427
 
 CACHE:
 index.html
@@ -74,7 +74,6 @@ payloads/Bins/RDR2/OystersMenu-1.13-FREE.bin
 payloads/Bins/RDR2/OystersMenu-1.19-FREE.bin
 payloads/Bins/RDR2/OystersMenu-1.24-FREE.bin
 payloads/Bins/RDR2/OystersMenu-1.29-FREE.bin
-payloads/Bins/Tools/history-blocker.bin
 payloads/Bins/Tools/app2usb.bin
 payloads/Bins/Tools/appcache-install.bin
 payloads/Bins/Tools/backup.bin
@@ -84,9 +83,11 @@ payloads/Bins/Tools/enable-browser.bin
 payloads/Bins/Tools/enable-updates.bin
 payloads/Bins/Tools/exit-idu.bin
 payloads/Bins/Tools/ftp.bin
+payloads/Bins/Tools/history-blocker.bin
 payloads/Bins/Tools/kernel-clock.bin
 payloads/Bins/Tools/Orbis-Toolbox-900.bin
 payloads/Bins/Tools/permanent-uart.bin
+payloads/Bins/Tools/ps4-psfree-fix.bin
 payloads/Bins/Tools/ps4debug.bin
 payloads/Bins/Tools/pup-decrypt.bin
 payloads/Bins/Tools/restore.bin

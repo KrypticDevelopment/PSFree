@@ -5,9 +5,9 @@ from datetime import datetime
 EXCLUDED_DIRS = {'.venv', '.git', 'noneed'}
 EXCLUDED_EXTENSIONS = {
     '.bat', '.txt', '.exe', '.mp4', '.py', '.bak', '.zip',
-    '.mp3', '.sh', '.h', '.c', '.o', '.ld', '.md', '.d'
+    '.mp3', '.sh', '.h', '.c', '.o', '.ld', '.md', '.d', '.LICENSE'
 }
-EXCLUDED_FILES = {'.gitignore', 'COPYING', 'LICENSE', 'MAKEFILE', 'Makefile', 'README.md', '.dockerignore',  'dockerfile', '.gitinclude'}
+EXCLUDED_FILES = {'.gitignore', '.keepgithub', 'COPYING', 'LICENSE', 'MAKEFILE', 'Makefile', 'README.md', '.dockerignore',  'dockerfile', '.gitinclude'}
 OUTPUT_FILE = 'PSFree.manifest'
 
 def create_manifest():

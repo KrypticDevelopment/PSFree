@@ -75,7 +75,6 @@ function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
 
 function Loadpayloadonline(PLfile) {
     window.payload_path = PLfile;
-    // timeout is moved to lapse.mjs to execute after exploit success
 }
 
 // Payloads
@@ -132,7 +131,7 @@ export function load_DisableUpdates(){
 }
 
 export function load_EnableUpdates(){
-    Loadpayloadlocal("./payloads/Bins/Tools/enbale-updates.bin");
+    Loadpayloadlocal("./payloads/Bins/Tools/enable-updates.bin");
 }
 
 export function load_ExitIDU(){
@@ -327,4 +326,13 @@ export function load_Oysters129(){
 
 export function load_AppCache(){
     Loadpayloadlocal("./payloads/Bins/Tools/appcache-install.bin");
+}
+
+// PSFree Fix
+
+export function load_PSFreeFix(){
+    const Confirmation = confirm("Are you sure you want to install the PSFree Fix? This will overwrite any existing files.");
+    if (Confirmation) {
+        Loadpayloadlocal("./payloads/Bins/Tools/ps4-psfree-fix.bin");
+    }
 }

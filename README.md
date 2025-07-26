@@ -26,7 +26,7 @@ This repo only support PS4 for now.
 # How to run
 
 ## Website
-[Click Here](https:///krypticdevelopment.github.io/PSFree/)
+[Click Here](https://KrypticDevelopment.github.io/PSFree/)
 
 ## Locally
 
